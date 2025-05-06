@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: LuvuubyRK*Jason1258
+      MYSQL_USER: aaa
+      MYSQL_PASSWORD: aaaaaaaaaaaa
+      TZ: Asia/Shanghai
+    ports:
+      - "3306:3306"                          # 映射端口
+    volumes:
+      - /data/mysql/data:/var/lib/mysql
+    restart: always

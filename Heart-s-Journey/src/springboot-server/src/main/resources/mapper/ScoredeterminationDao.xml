@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ScoredeterminationDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ScoredeterminationEntity" id="scoredeterminationMap">
+        <result property="papername" column="papername"/>
+        <result property="score" column="score"/>
+        <result property="determine" column="determine"/>
+        <result property="paperid" column="paperid"/>
+        <result property="analysis" column="analysis"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ScoredeterminationVO" >
+		SELECT * FROM scoredetermination  scoredetermination         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ScoredeterminationVO" >
+		SELECT  scoredetermination.* FROM scoredetermination  scoredetermination 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ScoredeterminationView" >
+
+		SELECT  scoredetermination.* FROM scoredetermination  scoredetermination 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ScoredeterminationView" >
+		SELECT * FROM scoredetermination  scoredetermination <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>

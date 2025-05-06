@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  project-1:
+    image: vue-front
+    container_name: vue-front
+    restart: always
+    ports:
+      - "82:80"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /data/pc/logs:/usr/local/openresty/nginx/logs:rw

@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  project-1:
+    image: vue-admin
+    container_name: vue-admin
+    restart: always
+    ports:
+      - "81:80"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /data/pc/logs:/usr/local/openresty/nginx/logs:rw

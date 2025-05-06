@@ -1,0 +1,11 @@
+version: '3'
+services:
+  yun:
+    image: boot
+    container_name: boot
+    restart: always
+    network_mode: host
+    ports:
+      - "48080:48080"
+    volumes:
+     - /etc/localtime:/etc/localtime:ro
